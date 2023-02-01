@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "MARLDynamics"
+  site-url: "https://wbarfuss.github.io/MARLDynamics"
+  description: "Modeling multi-agent reinforcement learning as dynamical systems"
+  repo-branch: main
+  repo-url: "https://github.com/wbarfuss/MARLDynamics"

@@ -2,4 +2,15 @@ website:
   sidebar:
     contents:
       - index.ipynb
-      - 00_core.ipynb
+      - section: Agents
+        contents:
+          - Agents/00_Base.ipynb
+          - Agents/01_StrategyBase.ipynb
+          - Agents/02_StrategyActorCritic.ipynb
+      - section: Environments
+        contents:
+          - Environments/00_EnvironmentBase.ipynb
+          - Environments/10_PrisonersDilemma.ipynb
+      - section: Utils
+        contents:
+          - Utils/99_helpers.ipynb

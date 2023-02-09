@@ -112,7 +112,7 @@ d = { 'settings': { 'branch': 'main',
                                                                                                  'MARLDynamics/Utils/FlowPlot.py'),
                                              'MARLDynamics.Utils.FlowPlot.plot_trajectories': ( 'Utilities/uflowplot.html#plot_trajectories',
                                                                                                 'MARLDynamics/Utils/FlowPlot.py')},
-            'MARLDynamics.Utils.helpers': { 'MARLDynamics.Utils.helpers.compute_stationarydistribution': ( 'Utilities/uhelpers.html#compute_stationarydistribution',
-                                                                                                           'MARLDynamics/Utils/helpers.py'),
-                                            'MARLDynamics.Utils.helpers.make_variable_vector': ( 'Utilities/uhelpers.html#make_variable_vector',
-                                                                                                 'MARLDynamics/Utils/helpers.py')}}}
+            'MARLDynamics.Utils.Helpers': { 'MARLDynamics.Utils.Helpers.compute_stationarydistribution': ( 'Utilities/uhelpers.html#compute_stationarydistribution',
+                                                                                                           'MARLDynamics/Utils/Helpers.py'),
+                                            'MARLDynamics.Utils.Helpers.make_variable_vector': ( 'Utilities/uhelpers.html#make_variable_vector',
+                                                                                                 'MARLDynamics/Utils/Helpers.py')}}}

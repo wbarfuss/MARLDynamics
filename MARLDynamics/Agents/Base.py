@@ -15,7 +15,7 @@ import jax.numpy as jnp
 from typing import Iterable
 from fastcore.utils import *
 
-from ..Utils.helpers import *
+from ..Utils.Helpers import *
 
 # %% ../../nbs/Agents/99_ABase.ipynb 6
 class abase(object):

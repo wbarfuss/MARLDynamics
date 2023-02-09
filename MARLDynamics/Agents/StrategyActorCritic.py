@@ -15,7 +15,7 @@ import jax.numpy as jnp
 from fastcore.utils import *
 
 from .StrategyBase import strategybase
-from ..Utils.helpers import *
+from ..Utils.Helpers import *
 
 # %% ../../nbs/Agents/01_AStrategyActorCritic.ipynb 5
 class stratAC(strategybase):

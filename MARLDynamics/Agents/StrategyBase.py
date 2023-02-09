@@ -15,7 +15,7 @@ from typing import Iterable
 from fastcore.utils import *
 
 from .Base import abase
-from ..Utils.helpers import *
+from ..Utils.Helpers import *
 
 # %% ../../nbs/Agents/10_AStrategyBase.ipynb 5
 class strategybase(abase):

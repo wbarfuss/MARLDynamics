@@ -4,9 +4,8 @@
 __all__ = ['ebase']
 
 # %% ../../nbs/Environments/E00_Base.ipynb 4
-import numpy as np
 from fastcore.utils import *
-from fastcore.test import *
+import numpy as np
 
 # %% ../../nbs/Environments/E00_Base.ipynb 5
 class ebase(object):

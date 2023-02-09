@@ -4,14 +4,14 @@ website:
       - index.ipynb
       - section: Agents
         contents:
-          - Agents/A01_StrategyActorCritic.ipynb
-          - Agents/A10_StrategyBase.ipynb
-          - Agents/A99_Base.ipynb
+          - Agents/01_AStrategyActorCritic.ipynb
+          - Agents/10_AStrategyBase.ipynb
+          - Agents/99_ABase.ipynb
       - section: Environments
         contents:
-          - Environments/E00_Base.ipynb
-          - Environments/E10_PrisonersDilemma.ipynb
+          - Environments/00_EnvBase.ipynb
+          - Environments/10_EnvPrisonersDilemma.ipynb
       - section: Utilities
         contents:
-          - Utilities/U01_FlowPlot.ipynb
-          - Utilities/U99_Helpers.ipynb
+          - Utilities/01_UFlowPlot.ipynb
+          - Utilities/99_UHelpers.ipynb

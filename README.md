@@ -30,11 +30,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 from MARLDynamics.Agents.StrategyActorCritic import stratAC
-from MARLDynamics.Environments.ExampleEnvironments import PrisonersDilemma
+from MARLDynamics.Environments.SocialDilemma import SocialDilemma
 from MARLDynamics.Utils import FlowPlot as fp
 
 # Init enviornment and MultiAgentEnvironment-interface
-env = PrisonersDilemma(R=1.0, T=0.8, S=-0.5, P=0.0)
+env = SocialDilemma(R=1.0, T=0.8, S=-0.5, P=0.0)
 mae = stratAC(env=env, learning_rates=0.1, discount_factors=0.9)
 
 # Compute learning trajectory 

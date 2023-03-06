@@ -10,7 +10,8 @@ website:
       - section: Environments
         contents:
           - Environments/00_EnvBase.ipynb
-          - Environments/10_EnvPrisonersDilemma.ipynb
+          - Environments/10_EnvSocialDilemma.ipynb
+          - Environments/11_EnvEcologicalPublicGood.ipynb
       - section: Utilities
         contents:
           - Utilities/01_UFlowPlot.ipynb

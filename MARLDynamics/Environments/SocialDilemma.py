@@ -13,7 +13,7 @@ from .Base import ebase
 # %% ../../nbs/Environments/10_EnvSocialDilemma.ipynb 6
 class SocialDilemma(ebase):
     """
-    Symmetric 2-agent 2-action Prisoners' Dilemma matrix game.
+    Symmetric 2-agent 2-action Social Dilemma Matrix Game.
     """ 
 
     def __init__(self,

@@ -38,7 +38,7 @@ jobs:
             false
           fi
           echo "Trying to strip out notebooks"
-          nbdev_clean
+          nbdev_clean --clear_all
           echo "Check that strip out was unnecessary"
           git status -s # display the status to see which nbs need cleaning up
           if [[ `git status --porcelain -uno` ]]; then

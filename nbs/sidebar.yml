@@ -10,6 +10,7 @@ website:
       - section: Environments
         contents:
           - Environments/00_EnvBase.ipynb
+          - Environments/01_EnvHistoryEmbedding.ipynb
           - Environments/10_EnvSocialDilemma.ipynb
           - Environments/11_EnvEcologicalPublicGood.ipynb
       - section: Utilities

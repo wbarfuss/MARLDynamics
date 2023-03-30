@@ -229,12 +229,12 @@ def Ps(self:abase,
         Ps = jnp.array(self._numpyPs(Xisa))
         self.has_last_statdist = True
 
-    self._last_statedist = statedist
+    self._last_statedist = Ps
     return Ps
 
 
 @patch
-def _numpyPS(self:abase, Xisa):
+def _numpyPs(self:abase, Xisa):
     """
     Compute stationary distribution `Ps`, given joint strategy `Xisa`
     just using numpy and without using JAX.
@@ -243,40 +243,40 @@ def _numpyPS(self:abase, Xisa):
     _pS = np.array(compute_stationarydistribution(Tss))
 
     # clean _pS from unwanted entries 
-    _pS = _pS[:, pS.mean(0)!=-10]
-    if len(pS[0]) == 0:  # this happens when the tollerance can distinquish 
+    _pS = _pS[:, _pS.mean(0)!=-10]
+    if len(_pS[0]) == 0:  # this happens when the tollerance can distinquish 
         assert False, 'No _statdist return - must not happen'
-    elif len(pS[0]) > 1:  # Should not happen, in an ideal world
-            # sidenote: This means an ideal world is ergodic ;)
-            print("More than 1 state-eigenvector found")
+    elif len(_pS[0]) > 1:  # Should not happen, in an ideal world
+        # sidenote: This means an ideal world is ergodic ;)
+        print("More than 1 state-eigenvector found")
 
-            if hasattr(self, '_last_statedist'):  # if last exists
-                # take one that is closesd to last
-                # Sidenote: should also not happen, because for this case
-                # we are using the jitted implementation `_jaxPS`.
-                pS0 = self._last_statedist
-                choice = np.argmin(np.linalg.norm(_pS.T - pS0, axis=-1))
-                print('taking closest to last')
-            else: # if no last_Ps exists
-                # take a random one.
-                print(pS.round(2))
-                nr = len(pS[0])
-                choice = np.random.randint(nr)
-                print("taking random one: ", choice)
-               
-    _pS = _pS[:, choice] 
-    return pS.flatten() # clean
+        if hasattr(self, '_last_statedist'):  # if last exists
+            # take one that is closesd to last
+            # Sidenote: should also not happen, because for this case
+            # we are using the jitted implementation `_jaxPS`.
+            pS0 = self._last_statedist
+            choice = np.argmin(np.linalg.norm(_pS.T - pS0, axis=-1))
+            print('taking closest to last')
+        else: # if no last_Ps exists
+            # take a random one.
+            print(_pS.round(2))
+            nr = len(_pS[0])
+            choice = np.random.randint(nr)
+            print("taking random one: ", choice)
+        _pS = _pS[:, choice] 
+        
+    return _pS.flatten() # clean
 
-# %% ../../nbs/Agents/99_ABase.ipynb 17
+# %% ../../nbs/Agents/99_ABase.ipynb 20
 @patch
 def Ri(self:abase,
        Xisa:jnp.ndarray # Joint strategy `Xisa`
       ) -> jnp.ndarray: # Average reward `Ri`
     """Compute average reward `Ri`, given joint strategy `Xisa`.""" 
     i, s = 0, 1
-    return jnp.einsum(self.statedist(X), [s], self.Ris(X), [i, s], [i])
+    return jnp.einsum(self.Ps(Xisa), [s], self.Ris(Xisa), [i, s], [i])
 
-# %% ../../nbs/Agents/99_ABase.ipynb 18
+# %% ../../nbs/Agents/99_ABase.ipynb 22
 @patch
 def trajectory(self:abase,
                Xinit:jnp.ndarray,  # Initial condition
@@ -311,7 +311,7 @@ def trajectory(self:abase,
 
     return np.array(traj), fixpreached
 
-# %% ../../nbs/Agents/99_ABase.ipynb 20
+# %% ../../nbs/Agents/99_ABase.ipynb 24
 @patch
 def _OtherAgentsActionsSummationTensor(self:abase):
     """
